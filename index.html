@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <title>ஸ்ரீ காளியம்மன் மண்டபம் – நன்கொடை</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      font-family: "Noto Sans Tamil", sans-serif;
+      padding: 20px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 193, 7, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(156, 39, 176, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(244, 67, 54, 0.1) 0%, transparent 50%);
+      animation: particle-float 20s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes particle-float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -30px); }
+    }
+
+    .invite-wrapper { 
+      max-width: 1400px; 
+      margin: auto; 
+      position: relative;
+      z-index: 1;
+    }
+
+    .invite-card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 30px;
+      box-shadow: 
+        0 30px 90px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      animation: card-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes card-entrance {
+      from { opacity: 0; transform: translateY(50px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* SCROLL ANIMATIONS */
+    .scroll-animate {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .scroll-animate.animate-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-animate-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .scroll-animate-left.animate-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-animate-right {
+      opacity: 0;
+      transform: translateX(80px);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .scroll-animate-right.animate-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-animate-scale {
+      opacity: 0;
+      transform: scale(0.7);
+      transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .scroll-animate-scale.animate-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* PREMIUM HEADER */
+    .invite-header {
+      background: linear-gradient(135deg, #7b1fa2 0%, #c2185b 50%, #d32f2f 100%);
+      color: white;
+      padding: 30px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .invite-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: header-glow 8s linear infinite;
+    }
+
+    @keyframes header-glow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .header-img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border-radius: 50%;
+      border: 4px solid #ffd700;
+      background: linear-gradient(135deg, #fff 0%, #fffde7 100%);
+      padding: 10px;
+      box-shadow: 
+        0 8px 30px rgba(255, 215, 0, 0.4),
+        0 0 0 8px rgba(255, 215, 0, 0.2),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .header-img:hover { 
+      transform: scale(1.2) rotate(360deg);
+      box-shadow: 
+        0 12px 40px rgba(255, 215, 0, 0.6),
+        0 0 0 12px rgba(255, 215, 0, 0.3),
+        inset 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+
+    .header-text { 
+      flex: 1; 
+      text-align: center; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .line1 { 
+      font-size: 1rem; 
+      font-weight: 700; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      letter-spacing: 1px;
+    }
+    
+    .line2 { 
+      font-size: 1.4rem; 
+      font-weight: 900; 
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+      margin: 8px 0;
+      background: linear-gradient(to right, #fff, #ffeb3b, #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+    
+    .line3 { 
+      font-size: 0.95rem; 
+      opacity: .95; 
+      font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+
+    /* DECORATIVE ELEMENTS */
+    .decorative-line {
+      height: 3px;
+      background: linear-gradient(to right, transparent, #ffd700, transparent);
+      margin: 10px auto;
+      width: 60%;
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
+    }
+
+    /* BODY CONTENT */
+    .invite-body { 
+      padding: 32px 28px; 
+      background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+    }
+
+    .tamil-body {
+      background: linear-gradient(135deg, #fff8e1 0%, #fffde7 100%);
+      padding: 28px;
+      border-radius: 20px;
+      border: 3px solid #ff6f00;
+      line-height: 2.1;
+      font-size: 1.1rem;
+      box-shadow: 
+        0 10px 40px rgba(255, 111, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      position: relative;
+      font-weight: 600;
+    }
+
+    .tamil-body::before,
+    .tamil-body::after {
+      content: '🕉️';
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.1;
+    }
+
+    .tamil-body::before {
+      top: 10px;
+      left: 15px;
+    }
+
+    .tamil-body::after {
+      bottom: 10px;
+      right: 15px;
+    }
+
+    .signature {
+      margin-top: 24px;
+      text-align: center;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: #2e7d32;
+      border: 4px solid #ffeb3b;
+      padding: 16px 28px;
+      display: inline-block;
+      border-radius: 15px;
+      box-shadow: 
+        0 6px 25px rgba(46, 125, 50, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+      position: relative;
+      transition: all 0.3s ease;
+      line-height: 1.8;
+      font-weight: 800;
+    }
+    
+    .signature:hover {
+      transform: translateY(-3px);
+      box-shadow: 
+        0 10px 35px rgba(46, 125, 50, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    }
+
+    /* TOP DONORS SECTION */
+    .top-donors {
+      padding: 40px 28px;
+      background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);
+      position: relative;
+    }
+
+    .top-donors::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, #ff6f00, #f57c00, #ff6f00);
+      box-shadow: 0 2px 10px rgba(255, 111, 0, 0.5);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #d84315, #ff6f00, #d84315);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+    }
+
+    .donor-card {
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+      color: #212121;
+      min-height: 150px;
+      border: 3px solid;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donor-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+      transition: all 0.5s;
+      opacity: 0;
+    }
+
+    .donor-card:hover::before {
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+
+    .donor-card:nth-child(1) { 
+      border-color: #ffd700;
+      background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+    }
+    
+    .donor-card:nth-child(2) { 
+      border-color: #c0c0c0;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    }
+    
+    .donor-card:nth-child(3) { 
+      border-color: #cd7f32;
+      background: linear-gradient(135deg, #ffe0b2 0%, #ffcc80 100%);
+    }
+    
+    .donor-card:nth-child(4),
+    .donor-card:nth-child(5) { 
+      border-color: #4caf50;
+    }
+
+    .donor-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .donor-overlay {
+      padding: 18px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .donor-rank {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 2.5rem;
+      font-weight: 900;
+      opacity: 0.25;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .donor-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .donor-amount {
+      background: linear-gradient(135deg, #0ebb11 0%, #c2c20e 100%);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+      box-shadow: 0 4px 15px rgba(26, 35, 126, 0.4);
+      letter-spacing: 1px;
+    }
+
+    /* CAROUSEL */
+    .carousel-section { 
+      padding: 32px 28px; 
+      background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    }
+    
+    .carousel-inner img {
+      height: 500px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      opacity: 1;
+    }
+
+    .carousel-control-prev { left: 20px; }
+    .carousel-control-next { right: 20px; }
+
+    /* TABS */
+    .custom-tabs {
+      border: none;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .custom-tabs .nav-link { 
+      font-weight: 700; 
+      color: #b71c1c;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px 12px 0 0;
+      padding: 12px 24px;
+      transition: all 0.3s;
+      background: #fafafa;
+    }
+
+    .custom-tabs .nav-link:hover {
+      background: #f5f5f5;
+      border-color: #b71c1c;
+    }
+
+    .custom-tabs .nav-link.active {
+      background: linear-gradient(135deg, #b71c1c 0%, #c2185b 50%, #7b1fa2 100%);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .tab-content {
+      border: 3px solid #e0e0e0;
+      border-top: none;
+      padding: 28px;
+      border-radius: 0 0 20px 20px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .bank-card {
+      background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+      border: 2px solid #dee2e6;
+      padding: 20px;
+      border-radius: 15px;
+      transition: all .3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
+      line-height: 1.8;
+    }
+    
+    .bank-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      border-color: #b71c1c;
+    }
+
+    .table {
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .table thead {
+      background: linear-gradient(135deg, #b71c1c 0%, #c2185b 50%, #7b1fa2 100%);
+      color: #fff;
+    }
+
+    .table thead th {
+      padding: 16px;
+      font-weight: 700;
+      text-align: center;
+      border: none;
+    }
+
+    .table tbody tr {
+      transition: all 0.3s;
+    }
+
+    .table tbody tr:hover {
+      background: #f5f5f5;
+      transform: scale(1.01);
+    }
+
+    .table tbody td {
+      padding: 14px;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+
+    .pagination { 
+      justify-content: center; 
+      margin-top: 20px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .page-item .page-link {
+      border-radius: 10px;
+      border: 2px solid #dee2e6;
+      color: #b71c1c;
+      font-weight: 700;
+      padding: 8px 16px;
+      transition: all 0.3s;
+    }
+
+    .page-item.active .page-link {
+      background: linear-gradient(135deg, #b71c1c, #7b1fa2);
+      border-color: transparent;
+      box-shadow: 0 4px 15px rgba(183, 28, 28, 0.4);
+      color: #ffffff;
+    }
+
+    .page-item .page-link:hover {
+      background: #f5f5f5;
+      border-color: #b71c1c;
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+      .donor-card {
+        min-height: 140px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .invite-body {
+        padding: 24px 20px;
+      }
+
+      .top-donors {
+        padding: 32px 20px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .donor-card {
+        min-height: 130px;
+      }
+
+      .donor-rank {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .invite-card {
+        border-radius: 20px;
+      }
+
+      .invite-header {
+        padding: 20px 16px;
+        flex-direction: row;
+        gap: 15px;
+      }
+
+   
+
+      .line1 { 
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+      }
+
+      .line2 { 
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin: 6px 0;
+      }
+
+      .line3 { 
+        font-size: 0.7rem;
+      }
+
+      .decorative-line {
+        width: 50%;
+        height: 2px;
+        margin: 6px auto;
+      }
+
+      .invite-body {
+        padding: 20px 16px;
+      }
+
+      .tamil-body { 
+        font-size: 0.95rem; 
+        padding: 20px;
+        line-height: 1.9;
+        border-width: 2px;
+      }
+
+      .tamil-body::before,
+      .tamil-body::after {
+        font-size: 1.5rem;
+      }
+
+      .signature {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+        border-width: 3px;
+        line-height: 1.6;
+      }
+
+      .top-donors {
+        padding: 24px 16px;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+      }
+
+      .donor-card {
+        min-height: 120px;
+      }
+
+      .donor-overlay {
+        padding: 14px;
+      }
+
+      .donor-rank {
+        font-size: 1.8rem;
+      }
+
+      .donor-top {
+        font-size: 0.85rem;
+      }
+
+      .donor-amount {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+      }
+
+      .carousel-section {
+        padding: 10px 10px;
+      }
+
+      .carousel-inner img { 
+        height: 240px;
+        border-radius: 15px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 40px;
+        height: 40px;
+      }
+
+      .carousel-control-prev { left: 10px; }
+      .carousel-control-next { right: 10px; }
+
+      .custom-tabs {
+        gap: 5px;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .custom-tabs .nav-link {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+      }
+
+      .tab-content {
+        padding: 20px 16px;
+        border-width: 2px;
+      }
+
+      .bank-card {
+        padding: 16px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .table {
+        font-size: 0.9rem;
+      }
+
+      .table thead th {
+        padding: 12px 8px;
+        font-size: 0.85rem;
+      }
+
+      .table tbody td {
+        padding: 10px 10px;
+        text-align: left;
+      }
+
+      .page-item .page-link {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .invite-header {
+        padding: 16px 12px;
+        gap: 10px;
+      }
+
+  
+      .line1 {
+        font-size: 0.7rem;
+      }
+
+      .line2 {
+        font-size: 0.9rem;
+      }
+
+      .line3 {
+        font-size: 0.65rem;
+      }
+
+      .tamil-body {
+        font-size: 0.9rem;
+        padding: 16px;
+      }
+
+      .signature {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      .donor-card {
+        min-height: 110px;
+      }
+
+      .donor-rank {
+        font-size: 1.5rem;
+      }
+
+      .donor-amount {
+        font-size: 0.85rem;
+      }
+
+      .carousel-inner img {
+        height: 200px;
+      }
+
+      .custom-tabs .nav-link {
+        padding: 8px 13px;
+        font-size: 0.85rem;
+        flex: 1;
+        text-align: center;
+      }
+
+      .tab-content {
+        padding: 16px 12px;
+      }
+
+      .bank-card {
+        padding: 14px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 5px;
+      }
+
+      .invite-card {
+        border-radius: 15px;
+      }
+
+      .header-img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .line1 {
+        font-size: 0.65rem;
+      }
+
+      .line2 {
+        font-size: 0.85rem;
+      }
+
+      .tamil-body {
+        font-size: 0.85rem;
+        padding: 14px;
+      }
+
+      .carousel-inner img {
+        height: 200px;
+      }
+    }
+
+    /* Landscape mode adjustments */
+    @media (max-height: 600px) and (orientation: landscape) {
+      .carousel-inner img {
+        height: 300px;
+      }
+
+      .donor-card {
+        min-height: 100px;
+      }
+    }
+
+    .bank-section{
+      background: #ffffbd;
+    border-radius: 20px;
+    padding: 20px;
+    }
+
+    .bank-name-text{
+      color: darkgreen;
+      font-weight: bold;
+    }
+
+    .highlight-amount {
+  background: #ffe0e0 !important;
+  color: #a10000 !important;
+}
+
+.bank-card button {
+  font-size: 11px;
+  padding: 2px 8px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#snackbar.show {
+  visibility: visible;
+  animation: fadein 0.3s, fadeout 0.3s 2.5s;
+}
+
+@keyframes fadein {
+  from { bottom: 0; opacity: 0; }
+  to { bottom: 30px; opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { bottom: 30px; opacity: 1; }
+  to { bottom: 0; opacity: 0; }
+}
+
+    
+  </style>
+</head>
+
+<body>
+
+<div class="invite-wrapper">
+<div class="invite-card">
+
+<!-- HEADER -->
+<div class="invite-header">
+  <img id="vinayagarImg" class="header-img" alt="Vinayagar">
+
+  <div class="header-text scroll-animate-scale">
+    <div class="line1">ஸ்ரீ செல்வ விநாயகர் துணை</div>
+    <div class="decorative-line"></div>
+    <div class="line2">ஸ்ரீ காளியம்மன் துணை</div>
+    <div class="decorative-line"></div>
+    <div class="line3">கொப்பம்பட்டி</div>
+  </div>
+  <img id="kaliammanImg" class="header-img" alt="Kaliamman">
+</div>
+  <!-- CAROUSEL -->
+<div class="carousel-section">
+  <div id="mandapamCarousel" class="carousel slide scroll-animate-scale" data-bs-ride="carousel" data-bs-interval="3000">
+    <div id="carouselImages" class="carousel-inner"></div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mandapamCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mandapamCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</div>
+<!-- MAIN CONTENT -->
+<div class="invite-body">
+
+  <div id="mainContent" class="tamil-body scroll-animate"></div>
+  <!-- ================= BANK DETAILS (SEPARATE SECTION) ================= -->
+  <div class="bank-section mb-2 mt-4 scroll-animate">
+    <h5 class="mb-3 bank-name-text">வங்கி விவரங்கள்</h5>
+    <div id="bankCards" class="row g-4">
+      <!-- Bank Cards UI Here -->
+    </div>
+  </div>
+  <div class="text-center mt-3">
+    <div id="signature" class="signature scroll-animate-scale"></div>
+  </div>
+</div>
+
+<!-- TOP 5 DONORS -->
+<div class="top-donors">
+<h2 class="section-title scroll-animate">டாப் 5 நன்கொடையாளர்கள்</h2>
+  <div id="topDonorsRow" class="row g-4 justify-content-center"></div>
+</div>
+
+
+
+<!-- TABS -->
+<div class="invite-body">
+
+  <!-- ================= TABS FOR DONORS & TAX PAYERS ================= -->
+  
+
+<div class="scroll-animate">
+
+  <!-- ================= DONORS SECTION ================= -->
+  <div class="mb-5">
+    <ul class="nav nav-tabs custom-tabs scroll-animate">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab">
+        நன்கொடையாளர்கள் விவரங்கள்
+      </button>
+    </li>
+  </ul>
+    <div class="table-responsive">
+      <table class="table table-hover text-center mt-2">
+        <thead>
+          <tr>
+            <th></th>
+            <th>பெயர்</th>
+            <th>தொகை</th>
+          </tr>
+        </thead>
+        <tbody id="donorsTable"></tbody>
+      </table>
+    </div>
+
+    <ul id="pagination" class="pagination justify-content-center"></ul>
+  </div>
+
+  <!-- ================= TAX PAYERS SECTION ================= -->
+  <div class="mb-4">
+    <ul class="nav nav-tabs custom-tabs scroll-animate">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab">
+        வரிதாரர்கள் விவரங்கள்
+      </button>
+    </li>
+  </ul>
+
+    <div class="table-responsive">
+      <table class="table table-hover text-center mt-2">
+        <thead>
+          <tr>
+            <th></th>
+            <th>பெயர்</th>
+            <th>வரி தொகை</th>
+          </tr>
+        </thead>
+        <tbody id="taxPayersTable"></tbody>
+      </table>
+    </div>
+
+    <ul id="taxPagination" class="pagination justify-content-center"></ul>
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* DATA */
+const donorsList = [
+  { name: "G.V.ராஜா வெங்கடராமன் - சுசிலா", amount: 500001 },
+  { name: "G.கனகராஜ் - ராஜேஸ்வரி", amount: 100001 },
+  { name: "R.ராஜேஷ் சந்திரன் - அமுதா", amount: 10000 },
+  { name: "S.வரதராஜ் - செல்வலட்சுமி", amount: 50000 },
+  { name: "S.தர்மராஜ் - ஜெயந்தி", amount: 50001 },
+  { name: "S.கேசவபெருமாள்சாமி - மணிமேகலை", amount: 200000},
+  { name: "கிருஷ்ணசாமி (சுபாநகர்)", amount: 5000 },
+  { name: "K.சரவணகுமார் - ஜோதிமணி (வரகனூர்)", amount: 10001 },
+  { name: "S. பிரபாகரன் - கலா (வரகனூர்)", amount: 10001 },
+  { name: "ராஜேஸ்வரி (சங்கரபாண்டியபுரம்)", amount: 5001 },
+  { name: "P.L.S. ரவிச்சந்திரன் அமுதா (வரகனூர்)", amount: 10001 },
+  { name: "S.ராமமூர்த்தி ராமலக்ஷ்மி (T.புதுப்பட்டி)", amount: 10001 },
+  { name: "V.மணிகண்டன் - ராதா (நார்ணாபுரம்)", amount: 5001 },
+  { name: "A.குமார் - ஜானகி", amount: 10000 },
+];
+const taxPayersList = [
+  { name: "P.சித்தவராஜ்", amount: 10000 },
+  { name: "S.கேசவபெருமாள்சாமி", amount: 10000 },
+  { name: "B.வெங்கடேசன்", amount: 10000 },
+  { name: "S.வரதராஜ்", amount: 10000 },
+  { name: "S.K. கிருஷ்ணமூர்த்தி", amount: 10000 },
+  { name: "K. முருகப்பெருமாள்", amount: 10000 },
+  { name: "கோ. சித்தையா", amount: 10000 },
+  { name: "ச.சி.கோ.சென்னகேசவன்", amount: 10000 },
+  { name: "S.K. வாசுதேவன்", amount: 10000 },
+  { name: "V.வெங்கடேஷ்", amount: 10000 },
+  { name: "S.K. ராஜகோபால்", amount: 10000 },
+  { name: "ராமசாமி ஆசிரியர்", amount: 10000 },
+  { name: "P.பச்சமுருகன்", amount: 10000 },
+  { name: "K.பாலமுருகன்", amount: 10000 },
+  { name: "S.நல்லம்மாள்", amount: 5000 },
+  { name: "P.நவநீதன்", amount: 10000 },
+  { name: "P.செண்பகராஜ்", amount: 10000 },
+  { name: "S.ஜெயராஜ் (எ) சுப்பையா", amount: 10000 },
+  { name: "S.உதயகுமார்", amount: 10000 },
+  { name: "D.ஜவஹர்", amount: 10000 },
+  { name: "D.செல்லத்தாய்", amount: 5000 },
+  { name: "S.கிருஷ்ணமூர்த்தி (எ) அப்பாதுரை", amount: 10000 },
+  { name: "V.ராஜா வெங்கடராமன்", amount: 10000 },
+  { name: "V.ராஜேந்திரகுமார்", amount: 10000 },
+  { name: "L.S.வேலுமணி - நவநீதன்", amount: 5000 },
+  { name: "P. கார்த்திக் - கௌரி", amount: 10000 },
+  { name: "R. வெங்கடேஷ்", amount: 10000 },
+  { name: "P. லெனின்", amount: 10000 },
+  { name: "L.S.S. பிரபாகரன்", amount: 10000 },
+  { name: "L.S.S. சுப்புலட்சுமி", amount: 5000 },
+  { name: "A. அய்யனார்", amount: 10000 },
+  { name: "A. சென்னம்மாள்", amount: 5000 },
+  { name: "R. கண்ணன்", amount: 10000 },
+  { name: "V. ராமசாமி", amount: 5000 },
+];
+const headerImages = {
+  vinayagar: "https://th.bing.com/th/id/OIP.z3_dX1Wgx9EBUXGFLDvsfAHaHS?w=218&h=215&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+  kaliamman: "https://th.bing.com/th/id/OIP.ZST6iTbnipKRgXlf_BWusQHaNK"
+};
+
+  const carouselImages = [
+    "https://i.pinimg.com/originals/9c/f5/09/9cf509106bf5e7b7ade4db9758880214.jpg",
+    "https://image2url.com/images/1765266114102-c08d0e9c-dd11-4d57-a1c2-3b9fb4865e43.jpeg",
+    "https://image2url.com/images/1765266584324-0bef1997-5a48-4acb-b6cf-39bb57c30d4d.jpeg",
+    "https://image2url.com/images/1765267052227-21d17375-d395-4cee-aff4-8cecd9c54cff.jpeg",
+    "https://image2url.com/images/1765265408148-ea5a2a4b-d665-41c0-b49d-e589e0bb9889.jpeg",
+    "https://image2url.com/images/1765265318932-11cb4b4f-a474-48b3-a938-a521b2413709.jpeg",
+    "https://image2url.com/images/1765265344805-5b5477a8-d194-4e8d-a74f-601f0c5297a3.jpeg",
+    "https://image2url.com/images/1765265371424-f65704e6-2efd-4b15-99c6-03b1b2b3862e.jpeg",
+    "https://image2url.com/images/1765264135994-c9022768-b840-4f71-8b5f-bcf8f0511480.jpeg",
+    "https://image2url.com/images/1765264085787-6a9becdf-ffef-4274-b4d8-bcaf258972be.jpeg",
+    "https://image2url.com/images/1765263618980-640ce3d4-cb26-4894-b9a8-b2365ff59a04.jpeg",
+    "https://tse2.mm.bing.net/th/id/OIP.1W5pEimEdOw0iUhcPimuqAHaE8?pid=ImgDet&w=178&h=118&c=7&dpr=1.5&o=7&rm=3",
+  ];
+
+
+const mainTamilText = `
+கொப்பம்பட்டி நமது கம்மவார் சமூகத்திற்குச் சொந்தமான
+ஸ்ரீ காளியம்மன் வளாகத்தில் புதிய திருமண மண்டப கட்டிடம்
+கட்டும் பணி துவங்கப்பட்டுள்ளது. இந்த புனித பணிக்கு
+தங்களால் இயன்ற நன்கொடைகள் வழங்குமாறு பணிவுடன் கேட்டுக்கொள்கிறோம்.
+`;
+
+const signatureText = `
+அன்புடன்<br>
+கம்மவார் சங்கம், கம்மவார் இளைஞர் சங்கம்  & விழா கமிட்டியளர்கள்  – கொப்பம்பட்டி
+`;
+
+const bankDetails = [
+  { name: "B. வெங்கடேசன்", phone: "7339496544 (G.pay)", acc: "29840200001044", upi: "vengadesanraja06@okicici",
+    qr: "https://image2url.com/images/1765261012024-160105b3-b5b4-4924-8f04-db004ce724b0.jpeg" },
+  { name: "S.K. ராஜகோபால்", phone: "9944081121 (G.Pay)", acc: "29840200001045", upi: "9944081121@ptsbi",
+    qr: "https://image2url.com/images/1765261050213-332af7cb-fa2a-41ba-9304-1b37d974cd6c.jpeg" },
+  { bank: "Bank of Baroda", ifsc: "BARB0KOVILP", branch: "Kovilpatti" }
+];
+
+/* SCROLL ANIMATION OBSERVER */
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate-visible');
+    }
+  });
+}, observerOptions);
+
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
+  animatedElements.forEach(el => observer.observe(el));
+}
+
+/* RENDER */
+vinayagarImg.src = headerImages.vinayagar;
+kaliammanImg.src = headerImages.kaliamman;
+
+mainContent.innerHTML = mainTamilText.replace(/\n/g, "<br>");
+signature.innerHTML = signatureText;
+
+carouselImages.forEach((img, i) => {
+  const carouselImagesElem = document.getElementById("carouselImages");
+  carouselImagesElem.innerHTML += `
+    <div class="carousel-item ${i === 0 ? 'active' : ''}">
+      <img src="${img}" class="w-100" alt="Mandapam ${i + 1}">
+    </div>`;
+});
+
+bankDetails.forEach((b, index) => {
+  const animClass = index % 2 === 0 ? 'scroll-animate-left' : 'scroll-animate-right';
+  if (b.bank) {
+    bankCards.innerHTML += `
+      <div class="col-12 ${animClass}">
+        <div class="bank-card">
+          <strong>🏦 ${b.bank}</strong><br>
+          IFSC: ${b.ifsc}<br>
+          Branch: ${b.branch}
+        </div>
+      </div>`;
+  } else {
+  bankCards.innerHTML += `
+    <div class="col-md-6 ${animClass}">
+      <div class="bank-card position-relative p-3">
+
+        <!-- NAME -->
+        <div>
+          <strong>👤 ${b.name}</strong>
+        </div>
+
+        <!-- MOBILE (CLICK TO CALL) -->
+        <div class="mt-1">
+          📞 <a href="tel:${b.phone.replace(/[^0-9]/g, '')}" class="text-decoration-none">
+            ${b.phone}
+          </a>
+        </div>
+
+        <!-- ACCOUNT WITH COPY ICON -->
+        <div class="mt-1 d-flex justify-content-between align-items-center">
+          <span>💳 Account: ${b.acc}</span>
+          <i class="fa-solid fa-copy text-primary"
+             style="cursor:pointer"
+             onclick="copyText('${b.acc}')"></i>
+        </div>
+
+        <!-- UPI WITH COPY ICON -->
+        ${b.upi ? `
+        <div class="mt-1 d-flex justify-content-between align-items-center">
+          <span><strong>UPI:</strong> ${b.upi}</span>
+          <i class="fa-solid fa-copy text-success"
+             style="cursor:pointer"
+             onclick="copyText('${b.upi}')"></i>
+        </div>
+        ` : ''}
+
+        <!-- QR -->
+        ${b.qr ? `
+          <div class="mt-2 text-center">
+            <img src="${b.qr}" alt="UPI QR"
+                 class="img-fluid" style="max-width:150px;">
+            <div class="mt-1"><small>Scan to Pay</small></div>
+          </div>
+        ` : ''}
+
+      </div>
+    </div>`;
+}
+
+
+});
+
+donorsList.sort((a, b) => b.amount - a.amount);
+
+donorsList.slice(0, 5).forEach((d, i) => {
+  const animationDelay = i * 0.1;
+  const animClass = i % 2 === 0 ? 'scroll-animate-left' : 'scroll-animate-right';
+  topDonorsRow.innerHTML += `
+    <div class="col-lg-3 col-md-4 col-sm-6 ${animClass}" style="transition-delay: ${animationDelay}s">
+      <div class="donor-card">
+        <div class="donor-overlay px-5">
+          <div class="donor-rank">${i + 1}.</div>
+          <div class="donor-top">
+            <span style="font-size: 1rem;">${d.name}</span>
+          </div>
+          <div class="donor-amount mt-3">₹ ${d.amount.toLocaleString('en-IN')}</div>
+        </div>
+      </div>
+    </div>`;
+});
+
+let currentPage = 1;
+const rowsPerPage = 20;
+
+function renderDonorsPage() {
+  donorsTable.innerHTML = "";
+  const start = (currentPage - 1) * rowsPerPage;
+  const pageData = donorsList.slice(start, start + rowsPerPage);
+
+  pageData.forEach((d, i) => {
+    donorsTable.innerHTML += `
+      <tr>
+        <td><strong>${start + i + 1}.</strong></td>
+        <td>${d.name}</td>
+        <td><strong>₹ ${d.amount.toLocaleString('en-IN')}</strong></td>
+      </tr>`;
+  });
+
+  renderPagination();
+}
+
+function renderPagination() {
+  pagination.innerHTML = "";
+  const pages = Math.ceil(donorsList.length / rowsPerPage);
+
+  for (let i = 1; i <= pages; i++) {
+    pagination.innerHTML += `
+      <li class="page-item ${i === currentPage ? 'active' : ''}">
+        <button class="page-link" onclick="currentPage=${i};renderDonorsPage()">${i}</button>
+      </li>`;
+  }
+}
+
+// Initialize
+renderDonorsPage();
+
+let currentTaxPage = 1;
+const rowsPerPageTax = 20;
+
+const taxPayersTable = document.getElementById("taxPayersTable");
+const taxPagination = document.getElementById("taxPagination");
+
+function renderTaxPayersPage() {
+  taxPayersTable.innerHTML = "";
+
+  const start = (currentTaxPage - 1) * rowsPerPageTax;
+  const pageData = taxPayersList.slice(start, start + rowsPerPageTax);
+
+  pageData.forEach((d, i) => {
+     const isHighlight = Number(d.amount) === 5000;
+    taxPayersTable.innerHTML += `
+      <tr >
+        <td ${isHighlight ? 'style="background:#ffe0e0;font-weight:bold;"' : ''}><strong>${start + i + 1}.</strong></td>
+        <td ${isHighlight ? 'style="background:#ffe0e0;font-weight:bold;"' : ''}>${d.name}</td>
+        <td ${isHighlight ? 'style="background:#ffe0e0;font-weight:bold;"' : ''}><strong>₹ ${d.amount.toLocaleString('en-IN')}</strong></td>
+      </tr>`;
+  });
+
+  renderTaxPagination();
+}
+
+function renderTaxPagination() {
+  taxPagination.innerHTML = "";
+  const pages = Math.ceil(taxPayersList.length / rowsPerPageTax);
+
+  for (let i = 1; i <= pages; i++) {
+    taxPagination.innerHTML += `
+      <li class="page-item ${i === currentTaxPage ? 'active' : ''}">
+        <button class="page-link" onclick="currentTaxPage=${i};renderTaxPayersPage()">${i}</button>
+      </li>`;
+  }
+}
+
+// Initialize Tax Payers
+renderTaxPayersPage();
+
+// Initialize scroll animations after DOM is loaded
+window.addEventListener('load', () => {
+  initScrollAnimations();
+});
+
+// Re-observe elements when tab changes
+document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
+  tab.addEventListener('shown.bs.tab', () => {
+    initScrollAnimations();
+  });
+});
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showSnackbar("Copied: " + text);
+  });
+}
+
+function showSnackbar(message) {
+  const snack = document.getElementById("snackbar");
+  snack.innerText = message;
+  snack.className = "show";
+
+  setTimeout(() => {
+    snack.className = snack.className.replace("show", "");
+  }, 2800); // 2.8 seconds
+}
+
+window.onload = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+</script>
+<div id="snackbar"></div>
+</body>
+</html>
