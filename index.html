@@ -918,8 +918,14 @@
 </div>
 <!-- MAIN CONTENT -->
 <div class="invite-body">
-
-  <div id="mainContent" class="tamil-body scroll-animate"></div>
+  <div class="text-center mt-2 mb-3">
+    <a href="velai-vivarangal.html" class="btn btn-warning">
+    வேலை விவரங்கள்
+  </a>
+  </div>
+  <div id="mainContent" class="tamil-body scroll-animate">
+  </div>
+  
   <!-- ================= BANK DETAILS (SEPARATE SECTION) ================= -->
   <div class="bank-section mb-2 mt-4 scroll-animate">
     <h5 class="mb-3 bank-name-text">வங்கி விவரங்கள்</h5>
@@ -931,6 +937,8 @@
     <div id="signature" class="signature scroll-animate-scale"></div>
   </div>
 </div>
+
+
 
 <!-- TOP 5 DONORS -->
 <div class="top-donors">
@@ -1013,6 +1021,116 @@
 
 <script>
 /* DATA */
+const velaiVivarangalData = [
+  {
+    id: 1,
+    title: "கட்டுமான பணி – நிலை 1",
+    previewText: "அடித்தள கட்டுமான பணிகள் தொடங்கப்பட்டுள்ளன.",
+    fullText: `
+      திருமண மண்டபத்தின் அடித்தள கட்டுமான பணிகள்
+      முறையாக திட்டமிட்டு மேற்கொள்ளப்பட்டு வருகின்றன.
+      பொதுமக்களின் ஒத்துழைப்பு இப்பணிக்கு மிகவும் அவசியம்.
+    `,
+    images: [
+      "images/work1.jpg",
+  "images/work1_2.jpg"
+    ]
+  },
+  {
+    id: 2,
+    title: "கட்டுமான பணி – நிலை 2",
+    previewText: "தூண்கள் மற்றும் மேல்தளம் அமைக்கும் பணி.",
+    fullText: `
+      தூண்கள் அமைத்தல், மேல்தளம் கட்டுமானம்
+      மற்றும் பாதுகாப்பு பணிகள் தொடர்ச்சியாக நடைபெறுகின்றன.
+    `,
+    images: [
+      "images/work1.jpg",
+  "images/work1_2.jpg"
+    ]
+  }
+];
+
+function openVelaiVivarangalPopup() {
+  console.log("Popup function called"); // debug
+
+  const modalBody = document.getElementById("velaiModalBody");
+  const modalTitle = document.getElementById("velaiModalTitle");
+  const modalEl = document.getElementById("velaiVivarangalModal");
+
+  if (!modalEl) {
+    alert("Modal HTML not found");
+    return;
+  }
+
+  modalTitle.innerText = "வேலை விவரங்கள்";
+
+  modalBody.innerHTML = `
+    <div class="row g-4">
+      ${velaiVivarangalData.map(item => `
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+
+            <div class="preview-images d-flex gap-2 p-2 overflow-auto">
+              ${
+                item.images.length
+                  ? item.images.slice(0, 3).map(img => `<img src="${img}">`).join("")
+                  : `<span class="text-muted">படங்கள் இல்லை</span>`
+              }
+            </div>
+
+            <div class="card-body">
+              <h5>${item.title}</h5>
+              <p class="tamil-body">${item.previewText}</p>
+
+              <button class="btn btn-sm btn-warning"
+                      onclick="openVelaiVivarangalDetail(${item.id})">
+                View More
+              </button>
+            </div>
+
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+
+  const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+  modal.show();
+}
+
+
+/* ================= DETAIL VIEW ================= */
+
+function openVelaiVivarangalDetail(id) {
+  const item = velaiVivarangalData.find(x => x.id === id);
+  const modalBody = document.getElementById("velaiModalBody");
+  const modalTitle = document.getElementById("velaiModalTitle");
+
+  modalTitle.innerText = item.title;
+
+  modalBody.innerHTML = `
+    <button class="btn btn-link mb-3"
+            onclick="openVelaiVivarangalPopup()">
+      ← திரும்ப செல்ல
+    </button>
+
+    <div class="row g-3">
+      ${item.images.map(img => `
+        <div class="col-md-4">
+          <img src="${img}" class="img-fluid rounded">
+        </div>
+      `).join("")}
+    </div>
+
+    <p class="tamil-body mt-4">
+      ${item.fullText.replace(/\n/g, "<br>")}
+    </p>
+  `;
+}
+
+
+
 const donorsList = [
   { name: "G.V.ராஜா வெங்கடராமன் - சுசிலா", amount: 500001 },
   { name: "G.கனகராஜ் - ராஜேஸ்வரி", amount: 100001 },
@@ -1124,6 +1242,9 @@ function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale');
   animatedElements.forEach(el => observer.observe(el));
 }
+
+
+
 
 /* RENDER */
 vinayagarImg.src = headerImages.vinayagar;
