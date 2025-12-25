@@ -867,6 +867,16 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.arrow {
+  margin-left: 6px;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
+
 #snackbar.show {
   visibility: visible;
   animation: fadein 0.3s, fadeout 0.3s 2.5s;
@@ -919,9 +929,9 @@
 <!-- MAIN CONTENT -->
 <div class="invite-body">
   <div class="text-center mt-2 mb-3">
-    <a href="velai-vivarangal.html" class="btn btn-warning">
-    வேலை விவரங்கள்
-  </a>
+   <a href="velai-vivarangal.html" class="btn btn-warning">
+  வேலை விவரங்கள் <span class="arrow">➜</span>
+</a>
   </div>
   <div id="mainContent" class="tamil-body scroll-animate">
   </div>
