@@ -112,7 +112,7 @@
     }
 
     /* Status badge */
-    .badge-status {
+    .badge-progress {
       background: #ffe0b2;
       color: #e65100;
       padding: 5px 12px;
@@ -121,6 +121,16 @@
       display: inline-block;
       margin-bottom: 8px;
     }
+
+    .badge-completed {
+  background: #c8e6c9; /* light green */
+  color: #1b5e20;      /* dark green */
+    padding: 5px 12px;
+      font-size: 12px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 8px;
+}
 
     .card-body {
       padding: 20px;
@@ -217,7 +227,7 @@
     const velaiVivarangalData = [
       {
         title: "கட்டுமான பணி – நிலை 1",
-        status: "நடைபெற்று வருகிறது",
+        status: "நடைபெற்று முடிந்தது",
         images: [
           "https://image2url.com/r2/bucket1/images/1766676700582-cf3d4b3e-6bd8-4b68-988f-67ee224b4c2a.jpeg",
           "https://image2url.com/r2/bucket1/images/1766676781085-5c5feaa6-726b-4b59-ad2c-304f0f2dbb2c.jpeg",
@@ -232,6 +242,19 @@
         அமைக்க வேண்டிய இடங்களில் JCB இயந்திரத்தின்
         மூலம் பள்ளங்கள் தோண்டும் பணிகள்
         ஆரம்பிக்கப்பட்டு சிறப்பாக நடைபெற்று வருகின்றன.
+        `
+      },
+      {
+        title: "கட்டுமான பணி – நிலை 2",
+        status: "நடைபெற்று வருகிறது",
+        images: [
+          "https://image2url.com/r2/bucket3/images/1767753314483-c5c3e7df-db10-4ea5-bcd0-8944d93ae3f7.jpeg",
+          "https://image2url.com/r2/bucket3/images/1767753998738-c77d2cea-d7b2-49ac-b725-833043a95807.jpeg",
+        ],
+        description: `
+            தூண்கள் அமைக்க வேண்டிய இடங்களில் அதனைத் தொடர்ந்து, தூண்களுக்கான அடித்தள கான்கிரீட் பணிகள் தொடங்கப்பட்டு,
+நிலத்திற்குள் உறுதியாக அமரும் வகையில் கான்கிரீட் ஊற்றும் பணிகள்
+சீராக நடைபெற்று வருகின்றன.
         `
       }
     ];
@@ -281,7 +304,10 @@
         </div>
 
         <div class="card-body">
-          <span class="badge-status">${item.status}</span>
+          <span
+      class="${item.status === 'நடைபெற்று முடிந்தது' ? 'badge-completed' : 'badge-progress'}">
+  ${item.status}
+</span>
           <h5 class="fw-bold mt-2">${item.title}</h5>
           <p class="work-desc">${item.description}</p>
         </div>
