@@ -1178,7 +1178,7 @@
 
             <div class="preview-images d-flex gap-2 p-2 overflow-auto">
               ${item.images.length
-          ? item.images.slice(0, 3).map(img => `<img src="${img}">`).join("")
+          ? item.images.slice(0, 3).map(img => `<img loading="lazy" decoding="async" src="${img}">`).join("")
           : `<span class="text-muted">படங்கள் இல்லை</span>`
         }
             </div>
@@ -1222,7 +1222,7 @@
     <div class="row g-3">
       ${item.images.map(img => `
         <div class="col-md-4">
-          <img src="${img}" class="img-fluid rounded">
+          <img loading="lazy" decoding="async" src="${img}" class="img-fluid rounded">
         </div>
       `).join("")}
     </div>
@@ -1388,7 +1388,7 @@
       const carouselImagesElem = document.getElementById("carouselImages");
       carouselImagesElem.innerHTML += `
     <div class="carousel-item ${i === 0 ? 'active' : ''}">
-      <img src="${img}" class="w-100" alt="Mandapam ${i + 1}">
+      <img src="${img}" loading="lazy" decoding="async" class="w-100" alt="Mandapam ${i + 1}">
     </div>`;
     });
 
@@ -1441,7 +1441,7 @@
         <!-- QR -->
         ${b.qr ? `
           <div class="mt-2 text-center">
-            <img src="${b.qr}" alt="UPI QR"
+            <img src="${b.qr}" decoding="async" loading="lazy" alt="UPI QR"
                  class="img-fluid" style="max-width:150px;">
             <div class="mt-1"><small>Scan to Pay</small></div>
           </div>
